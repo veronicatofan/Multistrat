@@ -9,8 +9,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Angajat {
-@Id
-@GeneratedValue(strategy = AUTO)
+
 Integer marcaAngajat;
 Integer nrContract;
 Integer CNP;
@@ -22,15 +21,22 @@ String adresa;
 Integer telefon;
 Double salariu;
 Integer idPost;
-String idDepartament;
+Departament departament;
+
+@OneToOne
+Post post;
 
 @OneToMany
-private List<Asigurare> asigurari = new ArrayList<Asigurare>();
+List<Asigurare> asigurari = new ArrayList<Asigurare>();
+
+@OneToMany
+List<Departament> departamente = new ArrayList<Departament>();
+@OneToMany
+List<TestAngajat> testeAngajati = new ArrayList<TestAngajat>();
 
 public Integer getMarcaAngajat() {
 	return marcaAngajat;
 }
-
 public void setMarcaAngajat(Integer marcaAngajat) {
 	this.marcaAngajat = marcaAngajat;
 }

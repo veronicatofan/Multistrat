@@ -2,10 +2,15 @@ package org.app.service.entities;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+@Entity
 public class TestAngajat {
-Integer marcaAngajat;
-Integer idEvaluare;
+@ManyToOne
+Angajat angajat;
 Double scor;
 Date dataTest;
-Integer idBeneficiu;
+@OneToOne
+Beneficiu beneficiu;
+@ManyToOne
+Evaluare evaluare;
 }

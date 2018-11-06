@@ -1,7 +1,11 @@
 package org.app.service.entities;
 
+import javax.persistence.Entity;
+@Entity
 public class Post {
 Integer idPost;
-//new ArrayList<Functie> functii=new 
-
+@ManyToOne
+Functie functie;
+@OneToOne;
+Angajat angajat;
 }
