@@ -12,4 +12,5 @@ String detalii;
 @ManyToOne
 Angajat angajat;
 
+
 }

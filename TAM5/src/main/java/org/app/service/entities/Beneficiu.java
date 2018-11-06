@@ -9,5 +9,5 @@ Double procentBeneficiu;
 @OneToMany
 ArrayList<TestAngajat> testeAngajati=new ArrayList<TestAngajat>();
 
-
+ 
 }

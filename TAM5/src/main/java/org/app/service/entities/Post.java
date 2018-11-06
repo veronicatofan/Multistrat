@@ -9,3 +9,4 @@ Functie functie;
 @OneToOne;
 Angajat angajat;
 }
+

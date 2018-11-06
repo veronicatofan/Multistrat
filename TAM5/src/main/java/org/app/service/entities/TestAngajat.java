@@ -14,3 +14,4 @@ Beneficiu beneficiu;
 @ManyToOne
 Evaluare evaluare;
 }
+

@@ -10,5 +10,5 @@ String denEvaluare;
 String tipEvaluare;
 @OneToMany
 ArrayList<TestAngajat> testeAngajati=new ArrayList<TestAngajat>();
-
+ 
 }
