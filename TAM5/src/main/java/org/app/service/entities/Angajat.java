@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Angajat {
 
+@Id
 Integer marcaAngajat;
 Integer nrContract;
 Integer CNP;
@@ -19,15 +20,10 @@ String numePrenume;
 String adresa;
 Integer telefon;
 Double salariu;
-Integer idPost;
 Departament departament;
-
-@OneToOne
-Post post;
 
 @OneToMany
 List<Asigurare> asigurari = new ArrayList<Asigurare>();
-
 @OneToMany
 List<Departament> departamente = new ArrayList<Departament>();
 @OneToMany

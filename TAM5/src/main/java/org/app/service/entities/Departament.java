@@ -3,11 +3,14 @@ package org.app.service.entities;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany; 
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Id; 
 
 @Entity
 public class Departament {
- String idDepartament;
+ @Id
+String idDepartament;
  String denDepartamnet;
  Integer nrAngajati;
  Integer marcaSef;
