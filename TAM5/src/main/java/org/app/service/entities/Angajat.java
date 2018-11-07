@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import static javax.persistence.CascadeType.ALL;
 @Entity
 public class Angajat {
 
@@ -23,11 +24,11 @@ Integer telefon;
 Double salariu;
 @ManyToOne
 Departament departament;
-@OneToMany
+@OneToMany (mappedBy="angajat", cascade=ALL)
 List<Asigurare> asigurari = new ArrayList<Asigurare>();
-@OneToMany
+@OneToMany(mappedBy = "angajat", cascade = ALL)
 List<Departament> departamente = new ArrayList<Departament>();
-@OneToMany
+@OneToMany(cascade = ALL, mappedBy = "angajat")
 List<TestAngajat> testeAngajati = new ArrayList<TestAngajat>();
 public Integer getMarcaAngajat() {
 	return marcaAngajat;
@@ -95,6 +96,53 @@ public Departament getDepartament() {
 public void setDepartament(Departament departament) {
 	this.departament = departament;
 }
+
+public List<Asigurare> getAsigurari() {
+	return asigurari;
+}
+public void setAsigurari(List<Asigurare> asigurari) {
+	this.asigurari = asigurari;
+}
+public List<Departament> getDepartamente() {
+	return departamente;
+}
+public void setDepartamente(List<Departament> departamente) {
+	this.departamente = departamente;
+}
+public List<TestAngajat> getTesteAngajati() {
+	return testeAngajati;
+}
+public void setTesteAngajati(List<TestAngajat> testeAngajati) {
+	this.testeAngajati = testeAngajati;
+}
+
+@Override
+public String toString() {
+	return "Angajat [marcaAngajat=" + marcaAngajat + ", nrContract=" + nrContract + ", CNP=" + CNP + ", numarCI="
+			+ numarCI + ", serieCI=" + serieCI + ", stare=" + stare + ", numePrenume=" + numePrenume + ", adresa="
+			+ adresa + ", telefon=" + telefon + ", salariu=" + salariu + ", departament=" + departament + ", asigurari="
+			+ asigurari + ", departamente=" + departamente + ", testeAngajati=" + testeAngajati + "]";
+}
+public Angajat(Integer marcaAngajat, Integer nrContract, Integer cNP, Integer numarCI, String serieCI, String stare,
+		String numePrenume, String adresa, Integer telefon, Double salariu, Departament departament) {
+	super();
+	this.marcaAngajat = marcaAngajat;
+	this.nrContract = nrContract;
+	CNP = cNP;
+	this.numarCI = numarCI;
+	this.serieCI = serieCI;
+	this.stare = stare;
+	this.numePrenume = numePrenume;
+	this.adresa = adresa;
+	this.telefon = telefon;
+	this.salariu = salariu;
+	this.departament = departament;
+}
+public Angajat() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
 
 
 }
